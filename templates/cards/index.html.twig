@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Main de Cartes{% endblock %}
+
+{% block body %}
+    <h1>Votre Main de Cartes</h1>
+
+    <h2>Non Triée :</h2>
+    <ul class="card-list">
+        {% for card in hand %}
+            <li class="card {{ card.color|lower }}">
+                <span class="value">{{ card.value }}</span>
+                <hr>
+                <span class="suit">{{ card.color }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Triée :</h2>
+    <ul class="card-list">
+        {% for card in sortedHand %}
+            <li class="card {{ card.color|lower }}">
+                <span class="value">{{ card.value }}</span>
+                <hr>
+                <span class="suit">{{ card.color }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
